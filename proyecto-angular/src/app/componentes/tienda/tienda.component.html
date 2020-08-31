@@ -1,0 +1,123 @@
+<div class="container">
+    <div class="btn-group">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+               Consultar Producto
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item"  (click)="filtrarTodos()">Todos</a>
+              <a class="dropdown-item"  (click)="filtrarPS4()">PS4</a>
+              <a class="dropdown-item"  (click)="filtrarXbox()">XBox One</a>
+              <a class="dropdown-item"  (click)="filtrarWiiU()">WiiU</a>
+            </div>
+          </div>
+        <button type="button" class="btn btn-primary" (click)="botonAgregar()">Agregar Producto</button>
+        
+      </div>
+     <br><br>
+    
+
+
+    <!--<div *ngIf="!agregar">
+      <div class="card text-white bg-info mb-3 mitarjeta" style="max-width: 18rem;" *ngFor="let producto of productos, let i = index">
+        <div class="card-header">{{ producto.consola }} - {{ producto.nombre }}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ producto.imagen }}</h5>
+          <p class="card-text">{{ producto.descripcion }}</p>
+          <p class="card-text">${{ producto.precio }}.00</p>
+          <p class="card-text">{{ producto.uid }}</p>
+          <button class="btn btn-danger mr-4 btn-sm" (click)="eliminar(producto)" *ngIf="_authS.usuario.uid == producto.uid || _authS.usuario.uid == producto.comprador">Borrar</button>
+        <button class="btn btn-primary btn-sm" (click)="editar(producto)" data-toggle="modal" data-target="#editarProductoModal" *ngIf="_authS.usuario.uid == producto.uid || _authS.usuario.uid == producto.comprador">Editar</button>
+        <button class="btn btn-primary btn-sm" (click)="comprar(producto)" *ngIf="_authS.usuario.uid != producto.uid && !producto.comprador" data-toggle="modal" data-target="#modalComprarProducto">Comprar</button>
+        </div>
+      </div>
+    </div>-->
+
+    <div class="row" *ngIf="!agregar">
+      <div class="col-lg-6 col-sm-12" *ngFor="let producto of productos, let i = index">
+        <div class="text-white bg-info mb-3 mitarjeta">
+          <div class="card-header">{{ producto.consola }} - {{ producto.nombre }}</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.imagen }}</h5>
+            <p class="card-text">{{ producto.descripcion }}</p>
+            <p class="card-text">${{ producto.precio }}.00</p>
+            <p class="card-text">{{ producto.uid }}</p>
+            <button class="btn btn-danger mr-4 btn-sm" (click)="eliminar(producto)" *ngIf="_authS.usuario.uid == producto.uid || _authS.usuario.uid == producto.comprador">Borrar</button>
+          <button class="btn btn-primary btn-sm" (click)="editar(producto)" data-toggle="modal" data-target="#editarProductoModal" *ngIf="_authS.usuario.uid == producto.uid || _authS.usuario.uid == producto.comprador">Editar</button>
+          <button class="btn btn-primary btn-sm" (click)="comprar(producto)" *ngIf="_authS.usuario.uid != producto.uid && !producto.comprador" data-toggle="modal" data-target="#modalComprarProducto">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div *ngIf="agregar">
+        <app-agregar-producto></app-agregar-producto>
+      </div>
+      
+
+</div>
+
+<!-- Ventana modal para editar -->
+<!-- Modal -->
+<div class="modal fade" id="editarProductoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar: {{productoEditar.nombre}} - {{productoEditar.marca}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form (ngSubmit)="agregarProductoEditado()">
+            
+              <label for="consola"name="consola">Consola:</label>
+              <select class=" form-control-sm" [(ngModel)]="productoEditar.consola" [ngModelOptions]="{standalone: true}">
+                  <option value="PS4">Ps4</option>
+                  <option value="XBox One">XBox One</option>
+                  <option value="WiiU">WiiU</option>
+                </select><br>
+              <!-- <input type="text" id="consola"  name="consola" placeholder="Consola Producto" [(ngModel)]="producto.consola"><br> -->
+              <label for="nombre"name="nombre">Nombre:</label>
+              <input type="text" id="nombre" size="50px" name="nombre" placeholder="Nombre producto" [(ngModel)]="productoEditar.nombre"><br>
+              <label for="descripcion"name="descripcion">Descripción:</label>
+              <textarea name="descripcion" id="descripcion" cols="60" rows="10" [(ngModel)]="productoEditar.descripcion"></textarea><br>
+              <label for="precio"name="precio">Precio:</label>
+              <input type="text" id="precio" name="precio" placeholder="Precio Producto" [(ngModel)]="productoEditar.precio"><br>
+              <label for="imagen"name="imagen">Imagen:</label>
+              <input type="file" class="form-control-file" id="imagenProducto"><br>
+              <button class="btn btn-warning" type="submit" >Editar Producto</button>
+         
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Modal Comprar -->
+ <div class="modal fade" id="modalComprarProducto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        !La compra se realizó exitosamente!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

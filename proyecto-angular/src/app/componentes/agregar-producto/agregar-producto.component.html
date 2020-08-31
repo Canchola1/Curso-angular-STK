@@ -1,0 +1,47 @@
+<p>Ingrese la siguiente información del producto a agregar</p>
+<form (ngSubmit)= "agregar()">
+    <label for="consola"name="consola">Consola:</label>
+    <select class=" form-control-sm" [(ngModel)]="producto.consola" [ngModelOptions]="{standalone: true}">
+        <option value="PS4">Ps4</option>
+        <option value="XBox One">XBox One</option>
+        <option value="WiiU">WiiU</option>
+      </select><br>
+    <!-- <input type="text" id="consola"  name="consola" placeholder="Consola Producto" [(ngModel)]="producto.consola"><br> -->
+    <label for="nombre"name="nombre">Nombre:</label>
+    <input type="text" id="nombre" size="50px" name="nombre" placeholder="Nombre producto" [(ngModel)]="producto.nombre"><br>
+    <label for="descripcion"name="descripcion">Descripción:</label>
+    <textarea name="descripcion" id="descripcion" cols="60" rows="10" [(ngModel)]="producto.descripcion"></textarea><br>
+    <label for="precio"name="precio">Precio:</label>
+    <input type="text" id="precio" name="precio" placeholder="Precio Producto" [(ngModel)]="producto.precio"><br>
+    <label for="imagen"name="imagen">Imagen:</label>
+    <input type="file" class="form-control-file" id="imagenProducto"><br>
+    <button class="btn btn-warning" type="submit" data-toggle="modal" data-target="#modalAgregarProducto">Agregar Producto</button>
+</form>
+<!-- <p>{{ producto.consola }}</p>
+<p>{{ producto.nombre }}</p>
+<p>{{ producto.descripcion }}</p>
+<p>{{ producto.precio }}</p> -->
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modalAgregarProducto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          !El producto se ha agregado exitosamente!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="limpiarProducto()">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>

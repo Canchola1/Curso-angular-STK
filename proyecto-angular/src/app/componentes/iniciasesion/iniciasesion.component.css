@@ -1,0 +1,51 @@
+.contenedorglobal{
+    padding-top: 150px;
+}
+
+.imagenregistro img{
+    width: 70%;
+    /* height: 100%; */
+    margin-left: 50px;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.imagenregistro img:hover{
+    -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.datosregistro{
+    text-align: right;
+    /* background-color: red; */
+}
+
+.datosregistro .datos{
+    display: block;
+    text-align: right;
+    margin-top: 20px;
+    height: 50px;
+    padding-top: 15px;
+    padding-right: 5px;
+    
+}
+
+.datosregistro input{
+    margin-top: 20px;
+    /* padding: 15px; */
+    border: 4px solid white;
+    border-radius: 25px;
+    height: 50px;
+    width: 500px;
+}
+
+.botonenviar{
+    margin: 50px 180px;
+    padding: 10px;
+    border: 4px solid white;
+    border-radius: 25px;
+    height: 50px;
+    background-color: hsl(202, 46%, 67%, 1.0);
+}

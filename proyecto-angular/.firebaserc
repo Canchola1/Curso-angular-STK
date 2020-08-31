@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "cursodeangularstk": {
+      "hosting": {
+        "proyecto-angular": [
+          "cursodeangularstk"
+        ]
+      }
+    }
+  }
+}

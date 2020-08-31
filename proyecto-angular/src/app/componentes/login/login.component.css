@@ -1,0 +1,31 @@
+.bienvenida img{
+    text-align: center;
+}
+/* h5{
+    text-align: center;
+} */
+
+.login{
+    display: inline;
+}
+.login h5{
+    display: inline;
+    padding-right: 5px;
+}
+
+.login button{
+    display: inline;
+}
+
+.logout{
+    display: inline;
+}
+.logout h5{
+    display: inline;
+    padding-right: 5px;
+}
+
+.logout button{
+    display: inline;
+}
+

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="contenedorglobal noticias">
+
+
+        <h3>Últimas Noticias</h3>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12" *ngFor="let noticia of noticias, let i = index">
+                <div class="col-12" *ngIf="i < 20">
+                    <span>{{ noticia.id }}</span>
+                    <p>{{ noticia.body }}</p>
+                    <span><button>Leer más</button></span>
+                </div>
+            </div>
+        </div>
+        <!-- <div *ngFor="let noticia of noticias, let i = index">
+            <div class="col-12">
+                <p *ngIf="i < 10">{{ noticia.body }}</p>
+                <span *ngIf="i < 10"><button>Leer más</button></span>
+            </div>
+            <div class="col-6">
+                <p *ngIf="i < 20">{{ noticia.body }}</p>
+                <span *ngIf="i < 20"><button>Leer más</button></span>
+            </div>
+            <div class="col-6">
+                
+                
+            </div>
+        </div> -->
+    </div>
+</div>

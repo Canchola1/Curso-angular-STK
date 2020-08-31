@@ -1,0 +1,10 @@
+<header>
+    <ul>
+      <li><a [routerLink]="['/home']" [routerLinkActive]="['actived']"><span class="fas fa-home" aria-hidden="true"></span> Inicio</a></li>
+      <li *ngIf="_authS.usuario.uid"><a [routerLink]="['/noticias']" [routerLinkActive]="['actived']">Últimas noticias</a></li>
+      <li *ngIf="_authS.usuario.uid"><a [routerLink]="['/tienda']" [routerLinkActive]="['actived']">Tienda</a></li>
+      <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']"><i class="fas fa-address-book"></i> Contacto</a></li>
+    </ul>
+    
+    
+  </header>

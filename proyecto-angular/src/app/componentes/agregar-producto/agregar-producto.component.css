@@ -1,0 +1,17 @@
+.modal{
+    color: black;
+}
+
+label{
+    margin-right: 5px;
+   
+}
+
+input[type=text], textarea{
+    /* padding: 4px 2px; 
+    border: 1px solid #aaa;
+    background: #fff;
+    width: 30%;
+    resize: none; */
+    vertical-align:top;
+}

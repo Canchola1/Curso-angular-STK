@@ -1,0 +1,163 @@
+/* Banner */
+.banner{
+    position: relative;
+}
+
+.banner img{
+    width: 100%;
+}
+
+.banner .welcome{
+    position: absolute;
+    left: 1%;
+    top: 30%;
+    color: white;
+    background-color: hsl(180, 25%, 25%, 0.75);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    /* align-self: flex-end; */
+}
+
+.bienvenida{
+    text-align: center;
+    font-family: "finger", Arial, Helvetica;
+    /* position: absolute; */
+    left: 1%;
+    top: 30%;
+    color: white;
+    /* background-color: hsl(180, 25%, 25%, 0.75); */
+}
+
+.invitacion{
+    text-align: center;
+    font-family: "Sriracha-Regular", Arial, Helvetica;
+}
+
+/* Container */
+.container{
+    padding: 120px 0px;
+}
+
+.container a{
+    color: white;
+}
+
+.fondoinicial{
+    /* margin: 0px auto; */
+    /* position: absolute; */
+    /* background: url("../images/fondo7.gif"); */
+    /* background-image: url("../images/fondo8.gif"); */
+    /* color: white; */
+    height: 200px;
+    /* height: 500px; */
+    /* max-width: 800px; */
+    /* background-attachment: local; */
+    /* height: 1000px; */
+    /* position: fixed; */
+}
+
+.fondoinicial a:hover{
+    text-decoration: none;
+}
+
+.botonera button{
+    margin: 20px 5px;
+    padding: 10px;
+    height: 50px;
+    border: 4px solid white;
+    border-radius: 25px;
+    background-color: tomato;
+    /* align-items: initial; */
+    
+    
+    /* position: absolute; */
+}
+
+.botonera button:hover{
+    /* border: 4px solid red; */
+    background-color: hsl(303, 20%, 42%, 1.0);
+    border-radius: 25px;
+    border-color: hsl(180, 25%, 25%, 1.0);
+}
+
+.botonera button:active{
+    background-color: yellow;
+}
+
+.imagenbienvenida{
+    max-width: 100%;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.productos p{
+    text-align: justify;
+    padding: 0px 5px;
+    margin: 10px 0px;;
+}
+
+.imagenregistro img{
+    width: 70%;
+    /* height: 100%; */
+    margin-left: 50px;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.imagenregistro img:hover{
+    -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+/* Patrocinadores */
+
+.patrocinadores{
+    margin-top: 100px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: rgba(118, 152, 179, 0.5);
+}
+
+.patrocinadores ul{
+    display: block;
+    margin: 0px auto;
+	/* width: 40%;
+    margin: -5px auto; */
+    padding: 0px 50px;
+    text-align: center;
+    
+}
+
+.patrocinadores ul li{
+	display: inline-block;
+    margin: 0px auto;
+    /*  
+	text-align: center;
+    line-height: 6em; */
+    
+}
+
+.patrocinadores ul li img{
+    padding: 0px 5px;
+    height: 50px;
+    opacity:0.4;
+}
+
+.patrocinadores img{
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.patrocinadores img:hover{
+    -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+#logout{
+    display: none;
+}
